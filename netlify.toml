@@ -1,3 +1,8 @@
+[[headers]]
+  for = "/site-kit/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
 [[redirects]]
   from = "https://bash-intro.rsquaredacademy.com/intro.html"
   to = "https://bash-intro.rsquaredacademy.com/introduction-to-command-line.html"
