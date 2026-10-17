@@ -18,8 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: List live pages from the sitemap
+        id: pages
+        run: |
+          curl -fsSL https://bash-intro.rsquaredacademy.com/sitemap.xml \
+            | grep -oE '<loc>[^<]+</loc>' | sed -E 's#</?loc>##g' > pages.txt
+          test -s pages.txt
+          echo "list=$(tr '\n' ' ' < pages.txt)" >> "$GITHUB_OUTPUT"
+
       - name: Check links on the deployed site
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress 'https://bash-intro.rsquaredacademy.com/**/*.html' --exclude 'mailto:*'
+          args: --verbose --no-progress ${{ steps.pages.outputs.list }} --exclude 'mailto:' --exclude 'reddit\.com' --exclude 'stackoverflow\.com' --exclude 'community\.posit\.co'
           fail: true

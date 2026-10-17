@@ -6,6 +6,7 @@ project:
     - "_redirects"
     - "404.html"
     - "robots.txt"
+    - "site-kit"
 
 quarto-required: ">=1.6.0"
 
@@ -33,6 +34,9 @@ book:
     - cheatsheet.qmd
     - git-appendix.qmd
   downloads: [pdf, epub]
+  page-footer:
+    center: |
+      We use Google Analytics 4 to understand how people use this site (pages visited, referring sites, device type and approximate location) so we can improve our free learning material. Google Analytics uses cookies and a pseudonymous identifier; we don't use it for advertising and we never send Google names or email addresses. Visitors in the European Economic Area, the United Kingdom and Switzerland are asked for consent first, and if they decline, no analytics cookies are stored. Anyone can switch analytics off at any time: <a href="#" data-rsa-analytics-optout>Turn off analytics</a>.
 
 website:
   site-url: https://bash-intro.rsquaredacademy.com
@@ -52,7 +56,8 @@ format:
     toc-depth: 3
     search: true
     code-overflow: wrap
-    include-in-header: _ga_partial.html
+    include-in-header:
+      - includes/site-kit-head.html
   pdf:
     documentclass: scrreprt
     papersize: us-letter
