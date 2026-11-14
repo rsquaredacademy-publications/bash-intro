@@ -6,7 +6,7 @@ knitr:
 
 # Input/Output {#sec-command-line-input-output}
 
-In this chapter, we will explore commands that will
+In this chapter, we will explore commands that
 
 - display messages
 - print file contents
@@ -52,7 +52,7 @@ echo Great Truth > release.txt
 
 ## Print & Concatenate Files
 
-The `cat` command reads data from files, and outputs their contents. It is the simplest way to display the contents of a file at the command line. It can be used to overwrite or append new content to files as well. `cat` stands for **catenate** and can be used to
+The `cat` command reads data from files and outputs their contents. It is the simplest way to display a file at the command line, and it can also overwrite or append new content to files. `cat` stands for **catenate** and can be used to
 
 - display text files
 - copy text files into a new document
@@ -75,7 +75,7 @@ cat release_names.txt
 
 ### Number All Output Lines
 
-If you want to number the output line, use the `-n` option.
+If you want to number the output lines, use the `-n` option.
 
 ```{bash}
 cat -n release_names.txt
@@ -83,7 +83,7 @@ cat -n release_names.txt
 
 ### Concatenate Several Files
 
-To concatenate the contents of several files into a target file, use `>`. In the below example, we concatenate the contents of the files `release_names_18.txt` and `release_names_19.txt` into a single file `release_names_18_19.txt`. In this case we are not printing the contents of the file to the terminal and instead we concatenate the contents from both the files and redirect the output to the target file.
+To concatenate the contents of several files into a target file, use `>`. In the example below, we concatenate the contents of the files `release_names_18.txt` and `release_names_19.txt` into a single file `release_names_18_19.txt`. In this case we do not print the contents to the terminal; instead we concatenate the contents of both files and redirect the output to the target file.
 
 ```{bash}
 cat release_names_18.txt release_names_19.txt > release_names_18_19.txt
@@ -92,7 +92,7 @@ cat release_names_18_19.txt
 
 ## Head
 
-The `head` command will display the firt 10 lines of a file(s) by default. It can be used to display the first few lines or bytes of a file as well. 
+The `head` command displays the first 10 lines of a file by default. It can be used to display the first few lines or bytes of a file as well. 
 
 | Command | Description |
 |:--------|:------------|
@@ -112,7 +112,7 @@ head release_names.txt
 
 ### Output the first n lines of a file
 
-Using the `n` option, we can specify the number of lines to be displayed. In the below example, we display the first 5 lines.
+Using the `n` option, we can specify the number of lines to be displayed. In the example below, we display the first 5 lines.
 
 ```{bash}
 head -n 5 release_names.txt
@@ -173,7 +173,7 @@ tail -n 5 release_names.txt
 
 ### Display all contents from line 10
 
-We can use `tail` to display all contents of a file starting from a specific line. In the below example, we display all contents of the file starting from the 10th line using the `n` option and `+` prefix while specifying the number of lines.
+We can use `tail` to display all contents of a file starting from a specific line. In the example below, we display all contents of the file starting from the 10th line using the `n` option and `+` prefix while specifying the number of lines.
 
 ```{bash}
 tail -n +10 release_names.txt
@@ -206,8 +206,8 @@ Press `space` to scroll down the page, the forward slash (`/`) for searching str
 
 ## Less
 
-The `less` command is similar to `more` but offers more features. It allows the
-user to scroll up and down, go to the beggining and end of the file, forward and backward search and the ability to go the next and previous match while searching the file.
+The `less` command is similar to `more` but offers more features. It allows us to
+scroll up and down, go to the beginning or end of the file, search forward and backward, and move to the next or previous match while searching.
 
 | Command | Description |
 |:--------|:------------|
@@ -224,21 +224,21 @@ user to scroll up and down, go to the beggining and end of the file, forward and
 
 ## Sort
 
-The `sort` command will sort the contents of text file, line by line. Using additional options, we can
+The `sort` command sorts the contents of a text file, line by line. Using additional options, we can
 
 - sort a file in ascending/descending order
 - ignore case while sorting
 - use numeric order for sorting
 - preserve only unique lines while sorting
 
-Using the `sort` command, the contents can be sorted numerically and alphabetically. By default, the rules for sorting are:
+With the `sort` command, the contents can be sorted numerically and alphabetically. By default, the rules for sorting are:
 
 - lines starting with a number will appear before lines starting with a letter.
 - lines starting with a letter that appears earlier in the alphabet will appear
 before lines starting with a letter that appears later in the alphabet.
 - lines starting with a lowercase letter will appear before lines starting with the same letter in uppercase.
 
-Using additional options, the rules for sorting can be changed. We list the options in the below table.
+Using additional options, the rules for sorting can be changed. We list the options in the table below.
 
 | Command | Description |
 |:--------|:------------|
@@ -250,7 +250,7 @@ Using additional options, the rules for sorting can be changed. We list the opti
 
 ### Sort 
 
-Let us sort the contents of the `pkg_names.txt` file. It contains names R packages randomly selected from CRAN.
+Let us sort the contents of the `pkg_names.txt` file. It contains names of R packages randomly selected from CRAN.
 
 ```{bash}
 sort pkg_names.txt
@@ -282,7 +282,7 @@ sort -n package_names.txt
 
 ### Preserve Only Unique Lines
 
-The `-u` option which stands for `--unique` will preserve only unique lines while sorting the contents of the file. In the below example, we remove all duplicate lines from the `pkg_names.txt` while sorting.
+The `-u` option which stands for `--unique` will preserve only unique lines while sorting the contents of the file. In the example below, we remove all duplicate lines from the `pkg_names.txt` while sorting.
 
 ```{bash}
 sort -u pkg_names.txt
@@ -290,7 +290,7 @@ sort -u pkg_names.txt
 
 ## Word Count
 
-`wc` will print newline, word, and  byte  counts  for  file(s). If more than one file is specified, it will also print total line.
+`wc` prints newline, word and byte counts for a file. If more than one file is specified, it also prints a total line.
        
 ### Count words, bytes and lines
 
