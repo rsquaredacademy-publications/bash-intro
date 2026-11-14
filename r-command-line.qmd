@@ -22,7 +22,7 @@ Here we will focus on the following
 - execute commands with arguments
 - redirect output
 
-Let us try to execute a command without any additional arguments. We will execute the `ls` command to list all files and directories. Use `system2()` and specify the command using the `command` argument. Whenever you are trying to execute a command from R, the first argument or input should be the command and it must be enclosed in quotes.
+Let us try to execute a command without any additional arguments. We will execute the `ls` command to list all files and directories. Use `system2()` and specify the command using the `command` argument. Whenever you execute a command from R, the first argument is the command, and it must be enclosed in quotes.
 
 ```{r eval=FALSE}
 system2(command = "ls")
@@ -30,16 +30,16 @@ system2(command = "ls")
 
 Great! Now, how do we specify the options? The additional options of a 
 command must be stored as a character vector and specified using the `args`
-argument. In the below example, we delete the `myexamples` folder we created earlier while decompressing the `zip_example.zip` file.
+argument. In the example below, we delete the `myexamples` folder we created earlier while decompressing the `zip_example.zip` file.
 
 ```{r eval=FALSE}
 system2(command = "rm",
         args    = c("-r", "myexamples"))
 ```
 
-In some cases, we might want to redirect the output. Let us say we are writing 
-message to a file using the `echo` command. In this cases, we want the output 
-to be redirected to the `release.txt` file. The `stdout` argument can be used to redirect output to a file or the R console. In the below example, we redirect the output to a file.
+In some cases, we might want to redirect the output. Let us say we are writing a 
+message to a file using the `echo` command; we want the output redirected to the 
+`release.txt` file. The `stdout` argument can be used to redirect output to a file or the R console. In the below example, we redirect the output to a file.
 
 ```{r system2_3a, eval=FALSE}
 system2(command = "echo", 
@@ -66,7 +66,7 @@ the terminal where it is executed as shown below.
 
 ## RMarkdown 
 
-RMarkdown supports `bash`, `sh` and `awk`. This post was initially  created using `sh` as the underlying operating system is Windows. Later, we used `bash` after installing the Windows subsystem for Linux. Click [here](https://bookdown.org/yihui/rmarkdown/language-engines.html#shell-scripts) to learn more.
+RMarkdown supports `bash`, `sh` and `awk`. This book was initially created using `sh`, as the underlying operating system is Windows. Later, we used `bash` after installing the Windows subsystem for Linux. Click [here](https://bookdown.org/yihui/rmarkdown/language-engines.html#shell-scripts) to learn more.
 
 ![Using the bash language engine in RMarkdown](img/cline_shell_markdown.png){#fig-shell-markdown fig-align="center" width="90%"}
 
@@ -90,7 +90,7 @@ R -e "head(mtcars); tail(mtcars)"
 Rscript -e "head(mtcars)"
 ```
 
-We can use `Rscript` to execute a R script as well. In the below example, we execute the code in `analysis.R` file. 
+We can use `Rscript` to execute a R script as well. In the example below, we execute the code in the `analysis.R` file. 
 
 ```{sh c120a, eval=FALSE}
 Rscript analysis.R
