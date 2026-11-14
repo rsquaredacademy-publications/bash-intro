@@ -36,7 +36,7 @@ The `tar` command is used for file compression. It works with both `tar` and
 | `tar rvf` | Add a file to an existing archive |
 | `tar rvfz` | Add a file to an existing gzipped archive |
 
-We will use different options along with the `tar` command for listing, extracting, creating and adding files. The `vf` (**v** stands for verbosely show .tar file progress and **f** stands for file name type of the archive file) option is common for all the above operations while the following are specific.
+We will use different options along with the `tar` command for listing, extracting, creating and adding files. The `vf` option (**v** shows the .tar file progress verbosely and **f** takes the file name of the archive) is common to all the operations above, while the following options are specific.
 
 - `t` for listing
 - `x` for extracting
@@ -47,7 +47,7 @@ While dealing with `tar.gz` archives we will use `z` in addition to `vf` and the
 
 ### List
 
-Let us list all the files & folders in `release_names.tar`. As mentioned above. to list the files in the archive, we use the `t` option.
+Let us list all the files & folders in `release_names.tar`. As mentioned above, to list the files in the archive, we use the `t` option.
 
 ```{bash}
 tar -tvf release_names.tar 
@@ -72,7 +72,7 @@ tar -rvf release_names.tar release_names_18.txt release_names_19.txt
 
 ### Create 
 
-Using the `c` option we can create tar archives. In the below example, we are using a single file but you can specify multiple files and folders as well.
+Using the `c` option we can create tar archives. In the example below, we use a single file, but you can specify multiple files and folders as well.
 
 ```{bash}
 tar -cvf pkg_names.tar pkg_names.txt
@@ -92,7 +92,7 @@ tar -cvf pkg_names.tar pkg_names.txt
 | `unzip -l` | List contents of a zip file |
 
 
-`gzip`, `gunzip`, and `zcat` commands are used to compress or expand files in the GNU GZIP format i.e. files with `.gz` extension
+`gzip`, `gunzip`, and `zcat` commands are used to compress or expand files in the GNU GZIP format, i.e. files with a `.gz` extension.
 
 ### Compress 
 
@@ -107,7 +107,7 @@ gunzip release_names.txt.gz
 
 ### Decompress 
 
-Use the `-d` option with `gzip` to decompress a file. In the below example, we stream the decompressed contents of `cran_log_sample.csv.gz` to the terminal while keeping the fixture compressed for later chapters. You can also use `gunzip` (or `gzip -d` on a disposable copy) for the same result.
+Use the `-d` option with `gzip` to decompress a file. In the example below, we stream the decompressed contents of `cran_log_sample.csv.gz` to the terminal while keeping the fixture compressed for later chapters. You can also use `gunzip` (or `gzip -d` on a disposable copy) for the same result.
 
 
 ```{bash}
@@ -117,7 +117,7 @@ ls
 
 ### Specify Filename
 
-Use `-c` and `>` to specify a different file name while compressing using `gzip`. In the below example, `gzip` will create `releases.txt.gz` instead of `release_names.txt.gz`.
+Use `-c` and `>` to specify a different file name while compressing using `gzip`. In the example below, `gzip` will create `releases.txt.gz` instead of `release_names.txt.gz`.
 
 ```{bash}
 gzip -c release_names.txt > releases.txt.gz
@@ -144,7 +144,7 @@ Using `unzip`, let us now extract files and folders from `zip_example.zip`.
 unzip zip_example.zip
 ```
 
-Using the `-d` option, we can extract the contents of `zip_example.zip` to a specific folder. In the below example, we extract it to a new folder `myexamples`.
+Using the `-d` option, we can extract the contents of `zip_example.zip` to a specific folder. In the example below, we extract it to a new folder `myexamples`.
 
 ```{bash}
 unzip zip_example.zip -d myexamples
@@ -152,14 +152,14 @@ unzip zip_example.zip -d myexamples
 
 ### Compress 
 
-Use the `-r` option along with `zip` to create a ZIP archive. In the below example, we create a ZIP archive of `myproject` folder.
+Use the `-r` option along with `zip` to create a ZIP archive. In the example below, we create a ZIP archive of the `myproject` folder.
 
 ```{bash}
 zip -r myproject.zip myproject
 ls
 ```
 
-We can compress multiple directories using `zip`. The names of the directories must be separated by a space as shown in the below example where we compress `myproject` and `mypackage` into a single ZIP archive.
+We can compress multiple directories using `zip`. The names of the directories must be separated by a space as shown in the example below, where we compress `myproject` and `mypackage` into a single ZIP archive.
 
 ```{bash}
 zip -r packproj.zip myproject mypackage
@@ -168,7 +168,7 @@ ls
 
 ### Add 
 
-To add a new file/folder to an existing archive, specify the name of the archive followed by the name of the file or the folder. In the below example, we add the `bash.sh` file to the `myproject.zip` archive created in a previous step.
+To add a new file/folder to an existing archive, specify the name of the archive followed by the name of the file or the folder. In the example below, we add the `bash.sh` file to the `myproject.zip` archive created in a previous step.
 
 ```{bash}
 zip myproject.zip bash.sh
@@ -191,7 +191,7 @@ In R, we can use the `tar()` and `untar()` functions from the `utils` package to
 
 ### zip & gzip
 
-The [zip](https://cran.r-project.org/package=zip) package has the functionalities to handle ZIP archives. The `tar()` and `untar()` functions from the `utils` package can handle GZIP archives.
+The [zip](https://cran.r-project.org/package=zip) package has the functions to handle ZIP archives. The `tar()` and `untar()` functions from the `utils` package can handle GZIP archives.
 
 | Command | R |
 |:--------|:--|
