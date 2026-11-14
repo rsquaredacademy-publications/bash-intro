@@ -245,7 +245,7 @@ Each chapter was rendered on its own in a throwaway copy of `git archive HEAD` o
 (`C:/Users/DELL/AppData/Local/Temp/ebk-d8b-render-bash`), with `quarto render <file>.qmd --to html`, one chapter at
 a time, through `heavy-slot.sh`. The project's `renv` library is not restored in this worktree (every package in the
 lockfile is absent), so the copy was rendered with its `.Rprofile` set aside and R's global library, which has
-`rmarkdown` and `knitr`. Thirteen of the sixteen chapters rendered with exit 0. Four chapters stop on shell commands
+`rmarkdown` and `knitr`. Twelve of the sixteen chapters rendered with exit 0. Four chapters stop on shell commands
 this Windows Git Bash does not provide (`cal`, `wget`, `free`, and a `find` on a missing fixture directory); the same
 four fail identically when the base commit `4c0134b` is rendered in the same copy, so the failures are environmental
 and not caused by this pass. No rendered output is committed. PDF and EPUB were not rebuilt.
