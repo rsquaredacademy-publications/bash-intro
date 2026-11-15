@@ -59,6 +59,7 @@ format:
     theme: cosmo
     toc: true
     toc-depth: 3
+    canonical-url: true
     search: true
     code-overflow: wrap
     filters:
