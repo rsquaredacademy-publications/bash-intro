@@ -6,7 +6,7 @@ knitr:
 
 # Search & Regular Expression {#sec-command-line-regular-expression}
 
-In this chapter, we will explore commands that will
+In this chapter, we will explore commands that
 
 - search for a given string in a file
 - find files using names
@@ -28,7 +28,7 @@ The `grep` command is used for pattern matching. Along with additional options, 
 - print filename and line number for each match
 - invert match for excluding specific strings
 
-`grep` processes text line by line, and prints any lines which match a specified pattern. `grep`, which stands for **g**lobal **r**egular **e**xpression **p**rint is a powerful tool for matching a regular expression against text in a file, multiple files, or a stream of input. 
+`grep` processes text line by line, and prints any lines that match a specified pattern. `grep`, which stands for **g**lobal **r**egular **e**xpression **p**rint is a powerful tool for matching a regular expression against text in a file, multiple files, or a stream of input. 
 
 | Command | Description |
 |:--------|:------------|
@@ -41,7 +41,7 @@ The `grep` command is used for pattern matching. Along with additional options, 
 
 ### Match Pattern in Input Text
 
-Using `grep` let us search for packages that inlcude the letter `R` in their names.
+Using `grep`, let us search for packages that include the letter `R` in their names.
 
 ```{bash}
 grep R package_names.txt
@@ -89,7 +89,7 @@ grep -i --color -Hn R package_names.txt
 
 ### Invert Match
 
-Use the `-v` option to select non-matching lines. In the below example, we search for packages whose name does not include `R` while ignoring the case.
+Use the `-v` option to select non-matching lines. In the example below, we search for packages whose names do not include `R`, ignoring the case.
 
 ```{bash}
 grep -v -i R package_names.txt
@@ -97,7 +97,7 @@ grep -v -i R package_names.txt
 
 ### Recursive Search
 
-Use the `-r` option to search recursively. In the below example, we search all files with the `.txt` extension for the string `bio` while ignoring the case.
+Use the `-r` option to search recursively. In the example below, we search all files with the `.txt` extension for the string `bio`, ignoring the case.
 
 ```{bash}
 grep -i --color -r bio *.txt
@@ -105,12 +105,12 @@ grep -i --color -r bio *.txt
 
 ## find
 
-The `find` command can be used for searching files and directories. Using additional options, we can
+We can use the `find` command to search for files and directories. Using additional options, we can
 
 - search files by extension type
 - ignore case while searching files/directories
 
-`find` is a powerful tool for working with the files. It can be used on its own to locate files, or in conjunction with other programs to perform operations on those files.
+`find` is a powerful tool for working with files. It can be used on its own to locate files, or in conjunction with other programs to perform operations on those files.
 
 | Command | Description |
 |:--------|:------------|
@@ -121,7 +121,7 @@ The `find` command can be used for searching files and directories. Using additi
 
 ### Search Recursively
 
-Let us use `find` to search for the file `release_names.txt` recursively. The `-name` option is used to specify the name of the file we are searching.
+Let us use `find` to search for the file `release_names.txt` recursively. The `-name` option specifies the name of the file we are searching for.
 
 ```{bash}
 find -name release_names.txt
@@ -141,7 +141,7 @@ There are 3 files with the `.txt` extension in `r_releases` folder.
 
 ### Case-insensitive Mode
 
-Search for all folders with the name `R` or `r`. Here we use the `-iname` option to ignore case while searching. The `-type` option is used to specify whether we are searching for files or folders. Since we are searching for folder/directory, we use it along with `d` i.e. directory to indicate that we are searching for directories and not files.
+Search for all folders with the name `R` or `r`. Here we use the `-iname` option to ignore case while searching. The `-type` option is used to specify whether we are searching for files or folders. Since we are searching for a folder, we use it with `d` (directory) to indicate that we are searching for directories and not files.
 
 ```{bash}
 find -type d -iname R

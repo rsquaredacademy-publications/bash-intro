@@ -9,7 +9,7 @@ This is the website for Command Line Basics for R Users. Visit the [GitHub repos
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work by [Aravind Hebbali](https://www.aravindhebbali.com/) is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-In this book, you will be introduced to shell commands. We have selected a set of commands we think will be useful in general to a wide range of audience. We have created a [Posit Cloud project](https://posit.cloud/content/13023750) to ensure that all readers are using the same environment while using code examples. Our goal is to ensure that after reading this book, you should be able to use the shell for version control, managing cloud services (like deploying your own shiny server etc.), execute commands in R & RMarkdown and execute R scripts in the shell. Apart from learning shell commands, the book will also focus on
+In this book, you will be introduced to shell commands. We have selected a set of commands we think will be useful to a wide range of readers. We have created a [Posit Cloud project](https://posit.cloud/content/13023750) to ensure that all readers use the same environment for the code examples. Our goal is that after reading this book, you will be able to use the shell for version control, for managing cloud services (like deploying your own Shiny server), for executing commands in R and RMarkdown, and for executing R scripts in the shell. Apart from learning shell commands, the book will also focus on
 
 - exploring R release names
 - mapping shell commands to R functions
@@ -18,7 +18,7 @@ In this book, you will be introduced to shell commands. We have selected a set o
 - execute shell commands in RMarkdown
 - execute R scripts in the shell 
 
-If you want a deeper understanding of using command line for data science, we suggest you read [Data Science at the Command Line](https://www.datascienceatthecommandline.com/). [Software Carpentry](https://software-carpentry.org/) too has a lesson on [shell](https://swcarpentry.github.io/shell-novice/). We have listed more references at the end of the book for the benefit of the readers.
+If you want a deeper understanding of using command line for data science, we suggest you read [Data Science at the Command Line](https://www.datascienceatthecommandline.com/). [Software Carpentry](https://software-carpentry.org/) too has a lesson on [shell](https://swcarpentry.github.io/shell-novice/). We have listed more references at the end of the book.
 
 ## Outline {.unnumbered}
 We start by introducing what the shell is, how to launch it in different operating system and explore
@@ -75,11 +75,11 @@ We do assume the reader is familiar with R and RStudio.
 
 ## Using code examples {.unnumbered}
 All the codes used in this book are available in our [GitHub repository](https://github.com/rsquaredacademy-publications/).
-We encourage you to use [Posit Cloud](https://posit.cloud/content/13023750) (it is free), especially Windows users as 
+We encourage you to use [Posit Cloud](https://posit.cloud/content/13023750) (it is free), especially Windows users, as 
 you will get access to Linux Bash and all the code and files/directories used in the examples.
 
 ## Software information {.unnumbered}
-The R session information when compiling this book is shown below:
+The session information used to compile this book is shown below:
 
 ```{r session}
 sessionInfo()

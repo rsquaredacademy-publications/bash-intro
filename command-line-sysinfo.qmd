@@ -10,7 +10,7 @@ In this chapter, we will explore commands that will allow us to
 - display memory usage information
 - display file system disk space usage 
 - exit the terminal
-- run commands a superuser
+- run commands as a superuser
 - shutdown the system
 
 | Command | Description |
@@ -57,7 +57,7 @@ df
 
 ## Others
 
-In this section, let us look at a few other useful commands that will allow us 
+In this section, let us look at a few other useful commands that allow us 
 to
 
 - see how long a command takes to execute

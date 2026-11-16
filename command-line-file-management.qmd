@@ -24,7 +24,7 @@ In this chapter, we will explore commands for file management including:
 
 ## Create new file
 
-`touch` modifies file timestamps which is information associated with file modification. It can be any of the following:
+`touch` modifies file timestamps, the information associated with file modification. It can be any of the following:
 
 - access time (the last time the file was read)
 - modification time (the last time the contents of the file was changed)
@@ -40,7 +40,7 @@ ls
 ## Copy Files/Folders
 
 `cp` makes copies of files and directories. The general form of the command is 
-**cp source destination**. By default, it will overwrite files without prompting for confirmation so be cautious while copying files or folders.
+**cp source destination**. By default, it overwrites files without prompting for confirmation, so be cautious when copying files or folders.
 
 ### Copy files in same folder
 
@@ -53,7 +53,7 @@ ls
 
 ### Copy files into different folder
 
-To copy a file into a different directory/folder, we need to specify the name of the destination folder. If the copied file should have a different name, then we need to specify the new name of the file as well. Let us copy the `release_names.txt` file into the `r_releases` folder (we will retain the same name for the file as we are copying it into a different folder).
+To copy a file into a different directory/folder, we need to specify the name of the destination folder. If the copied file should have a different name, specify the new name as well. Let us copy the `release_names.txt` file into the `r_releases` folder (we will retain the same name for the file as we are copying it into a different folder).
 
 ```{bash}
 mkdir -p r_releases
@@ -68,7 +68,7 @@ ls r_releases
 
 ### Copy folders
 
-How about making copies of folders? Use the `-r` option to copy entire folders. Let us create a copy of the `r` folder and name it as `r2`. The `-r` option stands for `--recursive` i.e. copy directories recursively. 
+How about making copies of folders? Use the `-r` option to copy entire folders. Let us create a copy of the `r` folder and name it as `r2`. The `-r` option stands for `--recursive`: it copies directories recursively. 
 
 ```{bash}
 cp -r r r2
@@ -97,7 +97,7 @@ Let us move the `release_names_2.txt` file to the `r_releases` folder.
 mv release_names_2.txt r_releases
 ```
 
-Use `ls` to verfiy if the file has been moved. As you can see, `release_names_2.txt` is not present in the current working directory.
+Use `ls` to verify that the file has been moved. As you can see, `release_names_2.txt` is not present in the current working directory.
 
 ```{bash}
 ls
@@ -111,7 +111,7 @@ ls r_releases
 
 ### Move files in verbose mode
 
-To view the details of the files being moved/renamed, use the `-v` option. In the below example, we first stage `release_names_3.txt` and then move it into the `r_releases` folder using `mv`. 
+To view the details of the files being moved/renamed, use the `-v` option. In the example below, we first stage `release_names_3.txt` and then move it into the `r_releases` folder using `mv`. 
 
 ```{bash}
 cp release_names.txt release_names_3.txt
@@ -120,15 +120,15 @@ mv -v release_names_3.txt r_releases
 
 ### Do not overwrite existing files
 
-How do we ensure that files are not overwritten without prompting the user first? In the below example, we will try to overwrite the `release_names_2.txt` in the `r_releases` folder using `mv` and see what happens. But first, let us look at the contents of the `release_names_2.txt` file using the `cat` command.
+How do we ensure that files are not overwritten without prompting the user first? In the example below, we will try to overwrite the `release_names_2.txt` in the `r_releases` folder using `mv` and see what happens. But first, let us look at the contents of the `release_names_2.txt` file using the `cat` command.
 
-We will look into the `cat` command in more detail in the next chapter but for the time being it is sufficient to know that it prints contents of a file. The file contains release names of different R versions.
+We will look into the `cat` command in more detail in the next chapter, but for now it is enough to know that it prints the contents of a file. The file contains release names of different R versions.
 
 ```{bash}
 cat r_releases/release_names_2.txt
 ```
 
-In our current working directory, we will create another file of the same name i.e. `release_names_2.txt` but its contents are different from the file in the `r_releases` folder. It contains the string `release_names` and nothing else. We will now move this file into the `r_releases` folder but use the option `-n` to ensure that the file in the `r_releases` folder is not overwritten. We can confirm this by printing the contents of the file in the `r_releases` folder.
+In our current working directory, we create another file of the same name, `release_names_2.txt`, but its contents differ from the file in the `r_releases` folder. It contains the string `release_names` and nothing else. We will now move this file into the `r_releases` folder but use the option `-n` to ensure that the file in the `r_releases` folder is not overwritten. We can confirm this by printing the contents of the file in the `r_releases` folder.
 
 The `echo` command is used to print text to the terminal or to write to a file. We will explore it in more detail in the next chapter.
 
@@ -142,7 +142,7 @@ As you can observe, the contents of the file in the `r_releases` folder has not 
 
 ### Do not prompt for confirmation before overwriting files
 
-What if we actually intend to overwrite a file and do not want to be prompted for confirming the same. In this case, we can use the `-f` option which stands for `--force` i.e. do not prompt before overwriting. Let us first print the contents of the `release_names_2.txt` file in the `r_releases` folder.
+What if we actually intend to overwrite a file and do not want a confirmation prompt? In this case, we can use the `-f` option which stands for `--force` i.e. do not prompt before overwriting. Let us first print the contents of the `release_names_2.txt` file in the `r_releases` folder.
 
 ```{bash}
 cat r_releases/release_names_2.txt
@@ -175,7 +175,7 @@ The `rm` command is used to delete/remove files & folders. Using additional opti
 
 ### Remove files
 
-Let us use `rm` to  remove the file `myanalysis.R` (we created it earlier using the `touch` command). 
+Let us use `rm` to remove the file `myanalysis.R` (we created it earlier using the `touch` command). 
 
 ```{bash}
 rm myanalysis.R
@@ -194,7 +194,7 @@ ls
 
 ### Force Removal
 
-Use the `-f` option which stands for `--force` to forciby remove directory and all its contents without prompting for confirmation or showing error messages. Let us first stage a disposable copy as `myproject2`, then remove it and all its contents.
+Use the `-f` option which stands for `--force` to forcibly remove directory and all its contents without prompting for confirmation or showing error messages. Let us first stage a disposable copy as `myproject2`, then remove it and all its contents.
 
 ```{bash}
 cp -r myproject myproject2
@@ -204,7 +204,7 @@ ls
 
 ### Verbose Mode
 
-Remove files in verbose mode, printing a message for each removed file. This is useful when you want to see the details of the files being removed. In the below example, we will remove all files with `.txt` extension from the `myfiles` folder. Instead of specifying the name of each text file, we use the wildcard `*` along with `.txt` i.e. any file with the extension `.txt` will be removed.
+Remove files in verbose mode, printing a message for each removed file. This is useful when you want to see the details of the files being removed. In the example below, we remove all files with `.txt` extension from the `myfiles` folder. Instead of specifying the name of each text file, we use the wildcard `*` along with `.txt` i.e. any file with the extension `.txt` will be removed.
 
 ```{bash}
 cd myfiles
@@ -237,7 +237,7 @@ Let us compare the contents of the following files
 - `imports_olsrr.txt`
 - `imports_blorr.txt`
 
-The files contain the names of R packages imported by the [olsrr](https://olsrr.rsquaredacademy.com/) and [blorr](https://blorr.rsquaredacademy.com/) packages respectively (**Full disclosure: both the above R pakages are developed by Rsquared Academy.**).
+The files contain the names of R packages imported by the [olsrr](https://olsrr.rsquaredacademy.com/) and [blorr](https://blorr.rsquaredacademy.com/) packages respectively (**Full disclosure: both R packages above are developed by Rsquared Academy.**).
 
 `diff` uses certain special symbols and gives instructions to make the files identical. The instructions are on how to change the first file to make it identical to the second file. We list the symbols below
 
@@ -251,7 +251,7 @@ We will use the `-w` option to ignore white spaces while comparing the files.
 diff -w imports_olsrr.txt imports_blorr.txt || true
 ```
 
-Let us interpret the results. `4a5` indicates **after line 4 in file 1, add line 5 from file 2** to make both the files identical i.e. add `caret` which is line 5 in `imports_blorr.txt` after line 4 in `imports_olsrr.txt` which will make both the files identical.
+Let us interpret the results. `4a5` indicates **after line 4 in file 1, add line 5 from file 2** to make both files identical, i.e. add `caret`, line 5 in `imports_blorr.txt`, after line 4 in `imports_olsrr.txt`.
 
 Let us change the file order and see the instructions from `diff`.
 
@@ -259,7 +259,7 @@ Let us change the file order and see the instructions from `diff`.
 diff -w imports_blorr.txt imports_olsrr.txt || true
 ```
 
-`5d4` indicates **delete line 5 from file 1 to match both the files at line4** i.e. delete `caret` which is line 5 in `imports_blorr.txt` to make both the files identical.
+`5d4` indicates **delete line 5 from file 1 to match both files at line 4**, i.e. delete `caret`, line 5 in `imports_blorr.txt`.
 
 ### Side By Side
 
@@ -287,7 +287,7 @@ diff -r mypackage myproject || true
 
 ### File Details
 
-To compare directories and view the names of files that differ, use the `-rq` option. In the below example, we look at the names of files that differ in `mypackage` and `myproject` folders.
+To compare directories and view the names of files that differ, use the `-rq` option. In the example below, we look at the names of files that differ in `mypackage` and `myproject` folders.
 
 ```{bash}
 diff -rq mypackage myproject || true

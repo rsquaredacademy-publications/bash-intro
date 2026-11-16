@@ -2,8 +2,8 @@
 
 ## What is Shell/Terminal?
 
-Shell is a text based application for viewing, handling & manipulating files. It
-takes in commands and passes them on to the operating system. It is also known
+The shell is a text-based application for viewing, handling and manipulating files.
+It takes in commands and passes them on to the operating system. It is also known
 as 
 
 - CLI (Command Line Interface)
@@ -79,12 +79,12 @@ You can learn more about the Windows Subsystem for Linux
 
 ### RStudio Terminal
 
-RStudio introduced the terminal with version 1.1.383. The terminal tab is next to the console tab. If it is not visible, use any of the below methods to launch it
+RStudio introduced the terminal with version 1.1.383. The terminal tab is next to the console tab. If it is not visible, use any of the methods below to launch it:
 
 - Shift + Alt + T 
 - Tools -> Terminal -> New Terminal
 
-Note, the terminal depends on the underlying operating system. To learn more about the RStudio terminal, see the terminal pane documentation in RStudio (Tools -> Terminal). In this book, we will use the RStudio terminal on [Posit Cloud](https://posit.cloud/content/13023750) to ensure that all users have access to Linux bash. You can try all the commands used in this book on your local system as well except in case of Windows users.
+Note, the terminal depends on the underlying operating system. To learn more about the RStudio terminal, see the terminal pane documentation in RStudio (Tools -> Terminal). In this book, we will use the RStudio terminal on [Posit Cloud](https://posit.cloud/content/13023750) to ensure that all users have access to Linux bash. You can try all the commands in this book on your local system as well, except on Windows.
 
 ![RStudio terminal](img/cline_rstudio-termina.png){#fig-rstudio-terminal fig-align="center" width="70%"}
 
@@ -117,7 +117,7 @@ To begin with, let us learn to display
 | `cal` | Display calendar |
 | `clear` | Clear the screen |
 
-`whoami` prints the effective user id i.e. the name of the user who runs the command. Use it to verify the user as which you are logged into the system.
+`whoami` prints the effective user ID, the name of the user who runs the command. Use it to verify the user as which you are logged into the system.
 
 ```{bash}
 whoami

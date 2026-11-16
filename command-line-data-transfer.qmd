@@ -6,7 +6,7 @@ knitr:
 
 # Data Transfer {#sec-command-line-data-transfer}
 
-In this chapter, we will explore commands that will allow us to download files 
+In this chapter, we will explore commands that allow us to download files 
 from the internet.
 
 | Command | Description |
@@ -21,7 +21,7 @@ Remote-download commands below are shown but not executed during automated build
 
 ## wget
 
-The `wget` command will download contents of a URL and files from the internet. 
+The `wget` command downloads the contents of a URL and files from the internet. 
 Using additional options, we can
 
 - download contents/files to a file
@@ -45,14 +45,14 @@ Using additional options, we can
 
 ### Download URL
 
-Let us first use `wget` to download contents of a URL. Note, we are not downloading file as such but just the content of the URL. We will use the URL of the home page of [R](https://www.r-project.org/) project. 
+Let us first use `wget` to download contents of a URL. Note that we are not downloading a file as such, only the content of the URL. We will use the URL of the home page of [R](https://www.r-project.org/) project. 
 
 ```{bash}
 #| eval: false
 wget https://www.r-project.org/
 ```
 
-Downloading a bare URL saves the response under a default name such as `index.html`, which gets confusing with multiple URLs. Save the contents to an explicitly named file instead (we can specify the name of the file which should help avoid confusion).
+Downloading a bare URL saves the response under a default name such as `index.html`, which gets confusing with multiple URLs. Save the contents to an explicitly named file instead.
 
 ### Specify Filename
 
@@ -65,7 +65,7 @@ wget -O rhomepage.html https://www.r-project.org/
 
 ### Download File
 
-How about downloading a file instead of a URL? In this example, we will download a logfile from the [RStudio CRAN](http://cran-logs.rstudio.com/) mirror. It contains the details of R downloads and individual package downloads. If you are a package developer and would want to know the countries in which your packages are downloaded, you will find this useful. We will download the file for 29th September and save it as `sep_29.csv.gz`. (The 2019 CRAN-log URLs below illustrate the pattern but the archive layout has since changed, so treat them as illustration and run the offline demo instead.)
+How about downloading a file instead of a URL? In this example, we will download a logfile from the [RStudio CRAN](http://cran-logs.rstudio.com/) mirror. It contains the details of R downloads and individual package downloads. If you are a package developer and want to know the countries your packages are downloaded from, you will find this useful. We will download the file for 29th September and save it as `sep_29.csv.gz`. (The 2019 CRAN-log URLs below illustrate the pattern but the archive layout has since changed, so treat them as illustration and run the offline demo instead.)
 
 ```{bash}
 #| eval: false
@@ -81,13 +81,13 @@ ls -lh wget_demo.csv.gz
 
 ### Download Multiple URLs 
 
-How do we download multiple URLs? One way is to specify the URLs one after the other separated by a space or save all URLs in a file and read them one by one. In the below example, we have saved multiple URLs in the file `urls.txt`. 
+How do we download multiple URLs? One way is to list the URLs one after another, separated by a space; another is to save all the URLs in a file and read them one by one. In the example below, we have saved multiple URLs in the file `urls.txt`. 
 
 ```{bash}
 cat urls.txt
 ```
 
-We will download all the above URLs and save them in a new folder `downloads`. The `-i` indicates that the URLs must be read from a file (local or external). The `-P` option allows us to specify the directory into which all the files will be downloaded. 
+We will download all the above URLs and save them in a new folder `downloads`. The `-i` option indicates that the URLs must be read from a file (local or external), and `-P` specifies the directory into which all the files will be downloaded. 
 
 ```{bash}
 #| eval: false
@@ -96,7 +96,7 @@ wget -P downloads -i urls.txt
 
 ### Quiet
 
-The `--quiet` option will turn off `wget` output. It will not show any of the following details:
+The `--quiet` option turns off `wget` output. It will not show any of the following details:
 
 - name of the file being saved
 - file size
@@ -119,7 +119,7 @@ wget --no-verbose http://cran-logs.rstudio.com/2019/2019-10-13.csv.gz
 
 ### Check Timestamp
 
-Let us say we have already downloaded a file from a URL. The file is updated from time to time and we intend to keep the local copy updated as well. Using the `--timestamping` option, the local file will have timestamp matching the remote file; if the remote file is not newer (not updated), no download will occur i.e. if the timestamp of the remote file has not changed it will not be downloaded. This is very useful in case of large files where you do not want to download them unless they have been updated.
+Let us say we have already downloaded a file from a URL. The file is updated from time to time and we intend to keep the local copy updated as well. With the `--timestamping` option, the local file's timestamp matches the remote file. If the remote file is not newer, no download occurs. This is very useful in case of large files where you do not want to download them unless they have been updated.
 
 ```{bash}
 #| eval: false
@@ -128,7 +128,7 @@ wget --timestamping http://cran-logs.rstudio.com/2019/2019-10-13.csv.gz
 
 ## curl
 
-The `curl` command will transfer data from or to a server. We will only look at
+The `curl` command transfers data from or to a server. We will only look at
 downloading files from the internet.
 
 | Command | Description |
@@ -163,7 +163,7 @@ curl -o curl_demo.csv.gz file://$PWD/cran_log_sample.csv.gz
 ls -lh curl_demo.csv.gz
 ```
 
-Another way to save a downloaded file is to use `>` followed by the name of the file as shown in the below example.
+Another way to save a downloaded file is to use `>` followed by the name of the file as shown in the example below.
 
 ```{bash}
 #| eval: false
@@ -172,7 +172,7 @@ curl http://cran-logs.rstudio.com/2019/2019-09-01.csv.gz > sep_01.csv.gz
 
 ### Download Silently
 
-The `-s` option will allow you to download files silently. It will mute `curl` and will not display progress meter or error messages.
+The `-s` option allows you to download files silently. It mutes `curl` and does not display the progress meter or error messages.
 
 ```{bash}
 #| eval: false

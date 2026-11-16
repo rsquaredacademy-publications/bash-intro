@@ -1,6 +1,6 @@
 # sudo {#sec-sudo-command}
 
-sudo **S**uper **U**ser **DO** is a prefix of commands that only superuser or root users are allowed to run. It is similar to **run as administrator** option in Windows. It is used to install, update and remove software. We will use it in the next section to install & update packages.
+sudo (**S**uper **U**ser **DO**) is a prefix for commands that only superusers or root users are allowed to run. It is similar to **run as administrator** option in Windows. It is used to install, update and remove software. We will use it in the next section to install & update packages.
 
 | Command | Description |
 |:--------|:------------|

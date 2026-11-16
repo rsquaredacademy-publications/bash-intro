@@ -17,9 +17,9 @@ knitr:
 - sed
 
 ## Summary
-- Shell is a text based application for viewing, handling and manipulating files
+- The shell is a text-based application for viewing, handling and manipulating files
 - It is also known by the following names
-  - CLI (Command Line Inteface)
+  - CLI (Command Line Interface)
   - Terminal
   - Bash (Bourne Again Shell)
 - Use `system2()` and `processx::run()` in R to execute shell commands

@@ -8,7 +8,7 @@ knitr:
 
 ## Introduction
 
-In this chapter, we will learn commands that will help us
+In this chapter, we will learn commands that help us
 
 - navigate between different folders/directories 
 - return current working directory 
@@ -41,14 +41,14 @@ With no options, it will list the files and directories in the current directory
 ls
 ```
 
-`cd` (**c**hange **d**irectory) changes the current working directory. It is among the most used commands as it allows the user to move around the file system.
+`cd` (**c**hange **d**irectory) changes the current working directory. It is one of the most used commands, as it allows us to move around the file system.
 
 ```{bash}
 cd r
 pwd
 ```
 
-`mkdir` will create new directory. It will allow you to set file mode (permissions associated with the directory) i.e. who can open/modify/delete the directory.
+`mkdir` creates a new directory. It also allows you to set the file mode (the permissions associated with the directory), which controls who can open, modify or delete it.
 
 ```{bash}
 mkdir rfiles
@@ -64,7 +64,7 @@ ls
 
 ## Change Working Directory
 
-Let us focus a bit more on changing working directory. The below table shows commands for changing working directory to
+Let us focus a bit more on changing the working directory. The table below shows commands for changing the working directory to
 
 - up one level
 - previous working directory
@@ -86,7 +86,7 @@ cd /
 pwd
 ```
 
-The parent directory i.e. the directory one level up from the current directory which contains the directory we are in now is represented by two dots (`..`). `cd ..` will change us into the parent directory of the current directory.
+The parent directory, the directory one level up that contains the directory we are in now, is represented by two dots (`..`). `cd ..` will change us into the parent directory of the current directory.
 
 ```{bash}
 cd ..
@@ -107,11 +107,11 @@ cd -
 pwd
 ```
 
-The current working directory is represented by a single dot (`.`). `cd .` will change us into the current directory i.e. it will do nothing. 
+The current working directory is represented by a single dot (`.`). `cd .` moves us into the current directory, which does nothing. 
 
 ## List Directory Contents
 
-`ls` will list the contents of a directory. Using different arguments, we can
+`ls` lists the contents of a directory. Using different arguments, we can
 
 - list hidden files
 - view file permissions, ownership, size & modification date
